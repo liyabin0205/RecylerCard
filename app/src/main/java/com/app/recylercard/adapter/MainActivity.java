@@ -1,5 +1,6 @@
 package com.app.recylercard.adapter;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -67,7 +68,12 @@ public class MainActivity extends AppCompatActivity implements DownAsyncTask.Wei
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                        .setAction("Action", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                startActivity(new Intent(MainActivity.this, Main3Activity.class));
+                            }
+                        }).show();
             }
         });
     }
